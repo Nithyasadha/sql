@@ -1,0 +1,198 @@
+1)WAQTD details of employees working in dept 10 or 30
+select*from emp where deptno in (10,20);
+
+2)WAQTD names of employees hired during 1982
+select ename from emp where hiredate between '01-jan-82' and '31-dec-82';
+
+3)WAQTD name and salary given to the employees earning commission
+select ename,sal from emp where comm is not null;
+
+4)WAQTD details of the employee having char 'S' as their last character
+select*from emp where job in 'CLERK' AND DEPTNO IN (10,20) AND ENAME LIKE '%A%';
+
+5)WAQTD names of the employee having char 'S' as their last character
+SELECT ENAME FROM EMP WHERE ENAME LIKE '%S';
+
+6)WAQTD name and hiredate of the employees hired after 1982 but before 1987
+ select ename,hiredate from emp where hiredate between '01-jan-82' and '31-dec-87';
+
+7)WAQTD details of the employees working as analyst and earing 4 digit salary
+select *from emp where job in 'ANALYST' and sal like '____';
+
+8)WAQTD names of the employees hired in the first month
+
+
+9)WAQTD details of the employees working as salesman doesnot earn any commision
+select *from emp where job in 'SALESMAN' and comm is null;
+
+10)WAQTD name and salary given to the employees hired during 1999 into dept 10 or 40
+
+11)WAQTD details of employee having two L's present in names and work as managr
+ select * from emp where job in 'MANAGER' and ename like '%L%L%';
+
+12)WAQTD names of employees who earn commision but not salary
+select ename from emp where sal is null and comm is not null;
+
+13)WAQTD names of the employees if names  starts with 'A" or "J' or 'S'
+select ename from emp where ename like 'A%' or ename like 'J%' or ename like 'S%';
+
+14)List all the employees names except for the employees whos names has 'A' as the 3rd character
+select * from emp where ename not like '__A%';
+
+15)List all the edetails of emploeyees working as manager and hired after 1984 and has a name ends with 'S';
+ select *from emp where job in 'MANAGER' and hiredate between '01-jan-84' and '31-dec-84' and ename like '%S';
+
+
+
+1)List all the employees whose commission is null
+SELECT*FROM EMP WHERE COMM IS NULL;
+
+2)list all the employees who doesnot have a reporting manager
+SELECT *FROM EMP WHERE MGR IS NULL;
+
+3)list all the salesman in dept 30
+SELECT *FROM EMP WHERE DEPTNO IN 30;
+
+4)list all the salesman in dept number 30 and having salary greater than 1500
+ SELECT *FROM EMP WHERE DEPTNO IN 30 AND SAL >1500;
+
+5)list all the employees whose name starts with 'S' or 'A'
+SELECT *FROM EMP WHERE ENAME LIKE 'S%' OR ENAME LIKE 'A%';
+
+6)list all the employees  except those who are working dept 10 & 20
+select *from emp where deptno not in (10,20);
+
+7)list all the employees whose name does not start with 'S'
+ SELECT *FROM EMP WHERE ENAME NOT LIKE 'S%';
+
+8)list all the employees who are having reporting manager in dept 10
+select *from emp where  deptno in 10 and MGR IS NOT NULL;
+
+9)list all the employees whose commission is null and working as clerk
+ SELECT *FROM EMP WHERE comm is null and job in 'CLERK';
+
+10)list all the employees who dont have a reporting manager in deptno 10 or 30
+SELECT *FROM EMP WHERE MGR IS NULL AND DEPTNO IN (10,30);
+
+11)List all the salesman in dept 30 with sal more than 2450
+
+12)List all the analyst in dept number 20 and having salary greater than 2500
+select *from employee where job in 'ANALYST' and deptno in 20 and sal>2500;
+
+13)List all the employees whose name starts with 'M' or 'J'
+select *from emp where ename like 'M%' or ename like 'J%';
+
+14)List all the employees with annual salary except those who are working in dept 30
+select emp.*,sal*12 from emp where deptno not in 30;
+
+15)List all the employees whose name does not end with 'ES' or "R"
+select *from emp where ename not like '%ES' and ename not like '%R';
+
+16)List all the employees who are having reporting manager in dept 10 along with 10%  hike in salary
+select emp.*,MGR,sal*10/100 from emp where deptno in 10;
+
+17)Display all the employees who r 'SALESMAN' having 'E' as last but one character in ename but slaary having exactly 4 characters
+select *from emp where job in 'SALESMAN' and ename like '%E_' and sal like '____';
+
+18)Display all the employees who r joined after year 81
+select *from emp where hiredate >'31-dec-81';
+
+19)Display all the employees who r joined in feb
+select *from emp where hiredate like '%FEB%';
+
+20)List all the employees who r  not working as managers and clerks in dept 10 and 20 with salary in range of 1000 to 3000
+SELECT *FROM EMP WHERE JOB NOT IN ('MANAGER' , 'CLERK') AND DEPTO IN (10,20) AND SAL BETWEEN 1000 AND 3000;
+
+21)LIST THE EMPLOYEES WHOSE SALARY NOT IN THE RANGE OF 1000 TO 2000 AND WORKING IN DEPT 10,20 OR 30 EXCEPT ALL SALESMEN
+SELECT*FROM EMP WHERE SAL NOT BETWEEN 1000 AND 2000 AND DEPTNO IN (10,20,30) AND JOB NOT IN 'SALESMAN';
+
+22) LIST THE DEPARTMENT NAMES WHICH ARE HAVING LETTER 'O' IN THEIR LOCATIONS AS WELL AS THEIR DEPARTMENT NAMES
+SELECT DNAME FROM DEPT WHERE LOC LIKE '%O%' ;
+
+23) DISPLAY ALL THE EMPLOYEES WHOSE JOB HAS STARTING 'MAN' IN IT.
+SELECT *FROM EMP WHERE JOB LIKE 'MAN%';
+
+24) LIST THE EMPLOYEES WHO ARE HIRED AFTER 82 AND BEFORE 87.
+SELECT *FROM EMP WHERE HIREDATE>'31-DEC-82' AND HIREDATE<'01-JAN-87';
+
+25) WAQTD ALL THE DETAILS OF EMPLOYEES HIRED IN NOVEMBER AND DECEMBER.
+SELECT *FROM EMP WHERE HIREDATE LIKE '%NOV%' OR HIREDATE LIKE '%DEC%';
+
+26)LIST ALL THE EMPLOYEE NAMES AND COMISSION FOR THOSE EMPLOYEES WHO EARN COMISSIO MORE THAN THEIR SALARY
+SELECT ENAME,COMM FROM EMP WHERE COMM>SAL;
+
+27) WAQTD NAME AND DESIGNATION FOR ALL THE EMPLOYEES HAVING REPORTING MANAGERS AND ALSO THRIE NAMES STARTING WITH 'S'
+SELECT ENAME,JOB FROM EMP WHERE ENAME LIKE 'S%';
+
+28) WAQTD NAME AND SALARY OF ALL THE EMPLOYEES IF THEIR ANNUAL SALARY ENDS WITH O
+SELECT ENAME,SAL*12 FROM EMP WHERE SAL*12 LIKE '%0';
+
+29) WAQTD NAME OF THE EMPLOYEE HAVING ATLEAST 2L'S IN HIS NAME.
+SELECT ENAME FROM EMP WHERE ENAME LIKE '%L%L%';
+
+30) WAQTD NAME OF THE EMPLOYEES WHOS NAME STARTS WITH A 'VOWEL'
+SELECT ENAME FROM EMP WHERE ENAME LIKE 'A%' OR ENAME LIKE 'E%' OR ENAME LIKE 'I%' OR ENAME LIKE 'O%' OR ENAME LIKE 'U%';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+8,10

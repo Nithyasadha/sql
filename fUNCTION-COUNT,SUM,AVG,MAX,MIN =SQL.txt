@@ -1,0 +1,29 @@
+11)WAQTD number of emps and total salary needed to pay the employees who have 2 consecutive L's in their names
+select count(*),sum(SAL) from emp where ename like '%LL%';
+
+12)WAQTD NO.OF.DEPARTMENTS PRESENT IN EMPLOYEE TABLE
+select count(DISTINCT deptno) from emp;
+
+13)WAQTD NO.OF.EMPLOYEES HAVING CHARACTER 'L' IN THEIR NAMES
+select count(*) from emp where ename like '%L%';
+
+14)WAQTD number of employees having atleast 2 L's in their names
+select count(empno) from emp where ename like '%L%L%';
+
+15)WAQTD TOTAL SALARY GIVEN TO EMPLOYEES WORKING AS CLERK IN DEPT 30
+select sum(SAL) from emp whre job='CLERK' and deptno=30
+
+16)WAQTD MAXIMUM SALARY GIVEN TO THE EMPLOYEES WORKING AS ANALYST 
+SELECT MAX(SAL) FROM EMP WHERE JOB='ANALYST'
+
+17)WAQTD NO.OF DISTINCT SALARIES PRESENT IN EMPLOYEE TABLE
+select count(DISTINCT SAL) from emp;
+
+18)WAQTD NUMBER OF JOBS PRESENT IN EMPLOYEE TABLE
+SELECT COUNT(DISTINCT JOB) FROM EMP;
+
+19)WAQTD AVG SALARY GIVEN TO THE CLERK
+SELECT AVG(SAL)FROM EMP WHERE JOB='CLERK';
+
+20)WAQTD MINIMUM SALARY GIVEN TO THE EMPLOYEES WHO WORK IN DEPTNO AS MANAGER OR A CLERK
+SELECT MIN(SAL) FROM EMP WHERE DEPTNO=10 AND JOB IN ('MANAGER','CLERK');

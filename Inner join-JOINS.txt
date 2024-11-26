@@ -1,0 +1,23 @@
+1)NAME OF THE EMPLOYEE AND HIS LOCATION OF ALL THE EMPLOYEES
+select ename,loc from emp,dept where emp.deptno = dept.deptno;
+2)WAQTD DNAME AND SALARY FOR ALL THE EMPLOYEE WORKING IN ACCOUNTING.
+select dname,sal from emp,dept where emp.deptno = dept.deptno and dname ='ACCOUNTING';
+3)WAQTD DNAME AND ANNUAL SALARY FOR ALL EMPLOYEES WHOS SALARY IS MORE THAN 2340
+select dname,sal*12 from emp,dept where emp.deptno=dept.deptno and sal >2340;
+4)WAQTD ENAME AND DNAME FOR EMPLOYEES HAVING CAHARACTER 'A' IN THEIR DNAME 
+select ename,dname from emp,dept where emp.deptno=dept.deptno and dname like '%A%';
+5)WAQTD ENAME AND DNAME FOR ALL THE EMPLOYEES WORKING AS SALESMAN
+select ename,dname from emp,dept where emp.deptno=dept.deptno and job='SALESMAN';
+6)WADTD DNAME AND JOB FOR ALL THE EMPLOYEES WHOS JOB AND DNAME STARTS WITH CHARACTER 'S'
+select dname,job from emp,dept where emp.deptno=dept.deptno and job like 'S%' and dname like 'S%';
+7)WAQTD DNAME AND MGR NO FOR EMPLOYEES REPORTING TO 7839
+select dname,mgr from emp,dept where emp.deptno=dept.deptno and mgr in 7839;
+8) WAQTD DNAME AND HIREDATE FOR EMPLOYEES HIRED AFTER 83 INTO ACCOUNTING OR RESEARCH DEPT
+select dname,hiredate from emp,dept where emp.deptno=dept.deptno and hiredate>'%83' and dname='ACCOUNTING' and dname='RESEARCH';
+select dname,hiredate from emp,dept where emp.deptno=dept.deptno and hiredate>'31-dec-83' and dname in ('ACCOUNTING','RESEARCH');
+9)WAQTD ENAME AND DNAME OF THE EMPLOYEES WHO ARE GETTING COMM IN DEPT 10 OR 30 
+select ename,dname from emp,dept where emp.deptno=dept.deptno and comm is not null and emp.deptno in (10,30);
+10)WAQTD DNAME AND EMPNO FOR ALL THE EMPLOYEES WHO'S EMPNO ARE (7839,7902) AND ARE WORKING IN LOC NEW YORK
+select dname,empno from emp,dept where emp.deptno=dept.deptno and empno in (7839,7902) and loc ='NEW york';
+
+

@@ -1,0 +1,222 @@
+1)LENGTH
+
+SQL> select length(ename) from emp;
+
+LENGTH(ENAME)
+-------------
+            5
+            5
+            4
+            5
+            6
+            5
+            5
+            5
+            4
+            6
+            5
+
+LENGTH(ENAME)
+-------------
+            5
+            4
+            6
+
+14 rows selected.
+
+SQL> select length('nithya') from dual;
+
+LENGTH('NITHYA')
+----------------
+               6
+
+2)UPPER
+
+SQL> select upper('nithya') from dual;
+
+UPPER(
+------
+NITHYA
+
+3)LOWER
+
+SQL> select lower('NITHYA') from dual;
+
+LOWER(
+------
+nithya
+
+4)INITCAP
+
+SQL> select initcap('kalpana') from dual;
+
+INITCAP
+-------
+Kalpana
+
+5)REVERSE
+
+SQL> select reverse('rudhresh') from dual;
+
+REVERSE(
+--------
+hserhdur
+
+6)MOD
+
+SQL> select mod(4,2) from dual;
+
+  MOD(4,2)
+----------
+         0
+
+7)ROUND
+
+SQL> select round(10.2) from dual;
+
+ROUND(10.2)
+-----------
+         1
+
+SQL> select round (10.6) from dual;
+
+ROUND(10.6)
+-----------
+         11
+
+8)TRUNC
+
+SQL> select trunc(10.9) from dual;
+
+TRUNC(10.9)
+-----------
+         10
+
+9)MONTHS_BETWEEN
+
+SQL> select months_between(sysdate,'27-oct-2003') from dual;
+
+MONTHS_BETWEEN(SYSDATE,'27-OCT-2003')
+-------------------------------------
+                           251.929546
+
+10)ADD_MONTHS
+
+SQL> select add_months('27-oct-2003',12) from dual;
+
+ADD_MONTH
+---------
+27-OCT-04
+
+11)NVL
+
+SQL> select sal+comm from emp;
+
+  SAL+COMM
+----------
+
+      1900
+      1750
+
+      2650
+
+
+
+
+      1500
+
+
+  SAL+COMM
+----------
+
+
+
+
+14 rows selected.
+
+SQL> select sal+nvl(comm,0) from emp;
+
+SAL+NVL(COMM,0)
+---------------
+            800
+           1900
+           1750
+           2975
+           2650
+           2850
+           2450
+           3000
+           5000
+           1500
+           1100
+
+SAL+NVL(COMM,0)
+---------------
+            950
+           3000
+           1300
+
+14 rows selected.
+
+12)SUBSTR
+
+SQL> select substr('jspiders',3,3) from dual;
+
+SUB
+---
+pid
+
+SQL> select substr('sadasumo',5,4) from dual;
+
+SUBS
+----
+sumo
+
+13)INSTR
+
+SQL> select  instr('banana','a',1,1) from dual;
+
+INSTR('BANANA','A',1,1)
+-----------------------
+                      2
+
+SQL> select instr('banana','a',2,3) from dual;
+INSTR('BANANA','A',2,3)
+-----------------------
+                      6
+14)REPLACE
+
+SQL> select replace('malayalam','a','s') from dual;
+
+REPLACE('
+---------
+mslsyslsm
+
+15)CASE
+
+SQL> select ename,sal,case when sal>2000 then 'high'
+;
+
+ENAME             SAL CASE
+---------- ---------- ----
+SMITH             800 avg
+ALLEN            1600 avg
+WARD             1250 avg
+JONES            2975 high
+MARTIN           1250 avg
+BLAKE            2850 high
+CLARK            2450 high
+SCOTT            3000 high
+KING             5000 high
+TURNER           1500 avg
+ADAMS            1100 avg
+
+ENAME             SAL CASE
+---------- ---------- ----
+JAMES             950 avg
+FORD             3000 high
+MILLER           1300 avg
+
+14 rows selected.
+
+ 
